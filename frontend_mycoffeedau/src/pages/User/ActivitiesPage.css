@@ -1,0 +1,158 @@
+.activities-container {
+    padding: 80px 20px;
+    background: #050404;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.activities-header {
+    margin-bottom: 2rem;
+}
+
+/* --- VÙNG CUỘN (SCROLL AREA) --- */
+.activities-scroll-area {
+    /* Giới hạn chiều cao cho 3 hàng items (~9 món) */
+    max-height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px 15px;
+    /* Tạo khoảng trống để card không bị dính vào scrollbar */
+    scrollbar-gutter: stable;
+    /* Giữ layout không bị nhảy khi scrollbar hiện ra */
+}
+
+/* --- CUSTOM SCROLLBAR PHONG CÁCH FANTASY --- */
+.activities-scroll-area::-webkit-scrollbar {
+    width: 6px;
+}
+
+.activities-scroll-area::-webkit-scrollbar-track {
+    background: rgba(61, 43, 31, 0.2);
+    border-radius: 10px;
+}
+
+.activities-scroll-area::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #b18c5d, #6d4c2a);
+    border: 1px solid #ffd27f;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(177, 140, 93, 0.5);
+}
+
+.activities-scroll-area::-webkit-scrollbar-thumb:hover {
+    background: #ffd27f;
+}
+
+.subtitle-fantasy {
+    color: #8b7355;
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+/* --- ACTIVITY CARD --- */
+.activity-card {
+    background: rgba(20, 16, 12, 0.95) !important;
+    border: 1px solid #3d2b1f;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.activity-card:hover {
+    transform: translateY(-10px);
+    border-color: #ffd27f;
+    box-shadow: 0 10px 30px rgba(177, 140, 93, 0.3);
+    z-index: 2;
+}
+
+.activity-image-wrapper {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    border-bottom: 1px solid #3d2b1f;
+}
+
+.activity-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.8s ease;
+}
+
+.activity-card:hover .activity-img {
+    transform: scale(1.1) rotate(1deg);
+}
+
+/* --- BADGES --- */
+.activity-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 12px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 2px;
+    z-index: 2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.activity-badge.hot {
+    background: #600;
+    color: white;
+    border: 1px solid #f00;
+}
+
+.activity-badge.new {
+    background: #040;
+    color: white;
+    border: 1px solid #0f0;
+}
+
+.activity-badge.quest {
+    background: #4a0082;
+    color: white;
+    border: 1px solid #9370db;
+}
+
+/* --- CONTENT --- */
+.activity-content {
+    padding: 20px;
+}
+
+.activity-category {
+    color: #ffd27f;
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-family: 'Cinzel', serif;
+}
+
+.activity-date {
+    color: #8b7355;
+    font-size: 0.75rem;
+}
+
+.activity-title {
+    margin: 10px 0;
+    font-size: 1.1rem;
+    font-family: 'Cinzel', serif;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.activity-desc {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    height: 4.8em;
+    /* Giữ chiều cao mô tả đồng nhất */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

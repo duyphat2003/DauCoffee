@@ -1,0 +1,150 @@
+.cart-page {
+    color: #f3e5ab;
+    min-height: 100vh;
+}
+
+.inventory-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    color: #ffd27f;
+    text-shadow: 0 0 15px rgba(255, 210, 127, 0.5);
+}
+
+/* Khung từng vật phẩm */
+.inventory-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.inventory-item {
+    background: rgba(30, 20, 15, 0.8);
+    border: 1px solid #3d2b1f;
+    padding: 15px;
+    border-radius: 8px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.inventory-item:hover {
+    border-color: #b18c5d;
+    box-shadow: 0 0 15px rgba(177, 140, 93, 0.2);
+    transform: translateX(10px);
+}
+
+.item-frame {
+    width: 80px;
+    height: 80px;
+    border: 2px solid #b18c5d;
+    background: #0a0807;
+    padding: 5px;
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+}
+
+.item-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.item-price {
+    color: #b18c5d;
+    font-size: 0.9rem;
+}
+
+/* Nút tăng giảm số lượng */
+.qty-btn {
+    background: #3d2b1f;
+    border: 1px solid #b18c5d;
+    color: #ffd27f;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.qty-btn:hover {
+    background: #b18c5d;
+    color: #1a0f0a;
+}
+
+/* Bảng tổng kết (Cuộn giấy cổ) */
+.scroll-summary {
+    background: #e0c9a6;
+    color: #2a1b12;
+    padding: 30px;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+    background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+    /* Texture giấy cũ */
+}
+
+.summary-title {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    text-align: center;
+    border-bottom: 2px solid #2a1b12;
+    padding-bottom: 10px;
+}
+
+.total-box {
+    margin-top: 30px;
+    padding: 15px;
+    border: 2px dashed #2a1b12;
+    text-align: center;
+}
+
+.final-amount {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    color: #8b0000;
+}
+
+.gold-unit {
+    font-size: 1rem;
+    color: #5d4037;
+}
+
+/* Buttons */
+.btn-checkout {
+    background: #2a1b12 !important;
+    color: #ffd27f !important;
+    border: 1px solid #ffd27f !important;
+    font-weight: bold;
+}
+
+.btn-back-shop {
+    background: transparent;
+    border: 1px solid #2a1b12;
+    color: #2a1b12;
+    padding: 10px;
+    font-family: 'Cinzel', serif;
+    transition: 0.3s;
+}
+
+.btn-back-shop:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.btn-remove {
+    background: transparent;
+    border: none;
+    color: #8b0000;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-remove:hover {
+    transform: scale(1.2);
+    color: #ff0000;
+}

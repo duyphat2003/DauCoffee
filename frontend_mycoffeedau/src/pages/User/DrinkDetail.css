@@ -1,0 +1,374 @@
+/* Import fonts cho phong cách RPG/Fantasy */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Quicksand:wght@400;600&display=swap');
+
+.drink-detail-container {
+    color: #f3e5ab;
+    font-family: 'Quicksand', sans-serif;
+    background: radial-gradient(circle at 50% -20%, #2a1b12 0%, #0a0807 80%);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* --- CỘT TRÁI: HÌNH ẢNH --- */
+.image-wrapper-fantasy {
+    position: relative;
+    padding: 10px;
+    background: rgba(177, 140, 93, 0.1);
+    border: 2px solid #3d2b1f;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transition: 0.4s;
+}
+
+.image-wrapper-fantasy:hover {
+    border-color: #b18c5d;
+    box-shadow: 0 0 30px rgba(177, 140, 93, 0.2);
+}
+
+.drink-img-main {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 4px;
+    filter: sepia(20%) contrast(1.1);
+}
+
+/* --- CỘT PHẢI: THÔNG TIN --- */
+.drink-info-section {
+    padding-left: 20px;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #b18c5d;
+    color: #1a0f0a;
+    padding: 5px 15px;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    font-size: 0.8rem;
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+    margin-bottom: 15px;
+}
+
+.drink-name-title {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    color: #f3e5ab;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin-bottom: 10px;
+}
+
+.drink-price-gold {
+    color: #d4af37;
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+}
+
+.drink-description {
+    line-height: 1.6;
+    color: #ccc;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.ingredients-box {
+    background: rgba(61, 43, 31, 0.3);
+    border-left: 3px solid #b18c5d;
+    padding: 15px;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+/* --- NÚT BẤM --- */
+.action-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-fantasy-add,
+.btn-fantasy-buy {
+    font-family: 'Cinzel', serif;
+    padding: 12px 30px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.btn-fantasy-add {
+    background: transparent;
+    border: 1px solid #b18c5d;
+    color: #b18c5d;
+}
+
+.btn-fantasy-add:hover {
+    background: #b18c5d;
+    color: #1a0f0a;
+}
+
+.btn-fantasy-buy {
+    background: #b18c5d;
+    color: #1a0f0a;
+    box-shadow: 0 0 10px rgba(177, 140, 93, 0.4);
+}
+
+.btn-fantasy-buy:hover {
+    background: #d4af37;
+    transform: translateY(-2px);
+}
+
+/* --- PHẦN REVIEWS (ĐÁNH GIÁ) --- */
+.section-title-fantasy {
+    font-family: 'Cinzel', serif;
+    border-bottom: 1px solid #3d2b1f;
+    padding-bottom: 10px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    color: #b18c5d;
+}
+
+.reviews-scroll-container {
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* Thanh cuộn (Scrollbar) */
+.reviews-scroll-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.reviews-scroll-container::-webkit-scrollbar-track {
+    background: #1a0f0a;
+}
+
+.reviews-scroll-container::-webkit-scrollbar-thumb {
+    background: #b18c5d;
+    border-radius: 10px;
+}
+
+.review-card-fantasy {
+    background: rgba(45, 35, 25, 0.4);
+    border: 1px solid #3d2b1f;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.review-card-fantasy:hover {
+    border-color: #b18c5d;
+    background: rgba(60, 45, 35, 0.6);
+}
+
+.visitor-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.visitor-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #b18c5d;
+    object-fit: cover;
+}
+
+.visitor-name {
+    margin: 0;
+    font-family: 'Cinzel', serif;
+    color: #f3e5ab;
+}
+
+.rating-stars {
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+.star-gold {
+    color: #d4af37;
+}
+
+.star-gray {
+    color: #444;
+}
+
+.review-comment {
+    margin-top: 15px;
+    margin-left: 65px;
+    color: #ddd;
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Loading/Error text */
+.gold-text {
+    font-family: 'Cinzel', serif;
+    color: #b18c5d;
+    font-size: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .drink-name-title {
+        font-size: 2rem;
+    }
+
+    .drink-img-main {
+        height: 350px;
+    }
+
+    .review-comment {
+        margin-left: 0;
+    }
+
+    .drink-info-section {
+        padding-left: 0;
+        margin-top: 30px;
+    }
+}
+
+/* Review Form Styles */
+.review-form-fantasy {
+    background: rgba(177, 140, 93, 0.05);
+    border: 1px dashed #b18c5d;
+    border-radius: 8px;
+}
+
+.star-clickable {
+    font-size: 1.8rem;
+    cursor: pointer;
+    margin-right: 8px;
+    transition: 0.2s;
+    display: inline-block;
+}
+
+.star-clickable:hover {
+    transform: scale(1.2);
+}
+
+.fantasy-textarea {
+    background: rgba(26, 15, 10, 0.9);
+    border: 1px solid #3d2b1f;
+    color: #f3e5ab;
+    padding: 15px;
+    border-radius: 4px;
+    outline: none;
+}
+
+.fantasy-textarea:focus {
+    border-color: #b18c5d;
+}
+
+.border-dashed {
+    border: 1px dashed #3d2b1f;
+    border-radius: 8px;
+}
+
+.fantasy-divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #b18c5d, transparent);
+}
+
+/* --- NÚT YÊU THÍCH --- */
+.btn-favorite-fantasy {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    padding: 12px 18px;
+    border: 1.5px solid #b18c5d;
+    background: transparent;
+    color: #b18c5d;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-favorite-fantasy::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(177, 140, 93, 0.08);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.btn-favorite-fantasy:hover::before {
+    opacity: 1;
+}
+
+.btn-favorite-fantasy:hover {
+    border-color: #d4af37;
+    color: #d4af37;
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.25);
+    transform: translateY(-1px);
+}
+
+.btn-favorite-fantasy.is-favorited {
+    background: rgba(177, 140, 93, 0.15);
+    border-color: #d4573c;
+    color: #e8664e;
+    box-shadow: 0 0 14px rgba(232, 102, 78, 0.3);
+}
+
+.btn-favorite-fantasy.is-favorited:hover {
+    background: rgba(216, 76, 50, 0.1);
+    border-color: #c03a22;
+    color: #c03a22;
+    box-shadow: 0 0 16px rgba(192, 58, 34, 0.35);
+}
+
+.btn-favorite-fantasy:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.fav-heart {
+    font-size: 1.2rem;
+    line-height: 1;
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    display: inline-block;
+}
+
+.btn-favorite-fantasy:not(:disabled):hover .fav-heart {
+    transform: scale(1.35);
+}
+
+.btn-favorite-fantasy.is-favorited .fav-heart {
+    animation: heartbeat 0.35s ease-out;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(1.45);
+    }
+
+    70% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.fav-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+}

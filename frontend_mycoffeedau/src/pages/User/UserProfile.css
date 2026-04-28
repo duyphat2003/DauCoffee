@@ -1,0 +1,828 @@
+/* ==========================================================================
+   USER PROFILE - FANTASY RPG STYLE
+   ========================================================================== */
+
+.user-profile-page {
+    color: #f3e5ab;
+    min-height: 100vh;
+    background-attachment: fixed;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* 1. CARD FRAME - KHUNG VIỀN CỔ ĐIỂN
+   -------------------------------------------------------------------------- */
+.card-frame {
+    background: rgba(20, 15, 10, 0.95);
+    border: 2px solid #b18c5d;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8), 0 15px 35px rgba(0, 0, 0, 0.9);
+    position: relative;
+    padding: 30px;
+    border-radius: 4px;
+}
+
+/* Hiệu ứng 4 góc khung viền */
+.card-frame::before,
+.card-frame::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #ffd27f;
+    z-index: 10;
+}
+
+.card-frame::before {
+    top: -2px;
+    left: -2px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.card-frame::after {
+    bottom: -2px;
+    right: -2px;
+    border-left: none;
+    border-top: none;
+}
+
+/* 2. AVATAR & RANK - HỆ THỐNG DANH HIỆU
+   -------------------------------------------------------------------------- */
+.avatar-container {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto;
+}
+
+.avatar-ring {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border: 2px dashed #ffd27f;
+    border-radius: 50%;
+    animation: rotateRing 15s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes rotateRing {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 4px solid #b18c5d;
+    object-fit: cover;
+    background: #000;
+    box-shadow: 0 0 20px rgba(177, 140, 93, 0.5);
+}
+
+.rank-badge-premium {
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #b18c5d 0%, #ffd27f 50%, #b18c5d 100%);
+    color: #1a0f0a;
+    padding: 3px 20px;
+    font-weight: 900;
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.user-name-fantasy {
+    font-family: 'Cinzel', serif;
+    color: #ffd27f;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255, 210, 127, 0.4);
+}
+
+.user-title-sub {
+    color: #8b7355;
+    font-style: italic;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* 3. NAVIGATION MENU - DANH MỤC TRÁI
+   -------------------------------------------------------------------------- */
+.nav-menu-fantasy {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-item-btn {
+    background: rgba(177, 140, 93, 0.03);
+    border: 1px solid rgba(177, 140, 93, 0.2);
+    color: #b18c5d;
+    padding: 15px 20px;
+    text-align: left;
+    font-family: 'Cinzel', serif;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.nav-item-btn:hover {
+    background: rgba(177, 140, 93, 0.1);
+    color: #f3e5ab;
+    border-color: #b18c5d;
+    padding-left: 25px;
+}
+
+.nav-item-btn.active {
+    background: linear-gradient(90deg, rgba(177, 140, 93, 0.2) 0%, transparent 100%);
+    border-left: 4px solid #ffd27f;
+    color: #ffd27f;
+    padding-left: 30px;
+}
+
+.nav-item-btn .icon {
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+.active-indicator {
+    position: absolute;
+    right: 15px;
+    font-size: 0.8rem;
+    animation: pulseArrow 1s infinite;
+}
+
+@keyframes pulseArrow {
+
+    0%,
+    100% {
+        transform: translateX(0);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translateX(-5px);
+        opacity: 1;
+    }
+}
+
+/* 4. FORM & INPUTS - NHẬP LIỆU
+   -------------------------------------------------------------------------- */
+.tab-title {
+    font-family: 'Cinzel', serif;
+    color: #ffd27f;
+    margin-bottom: 35px;
+    border-bottom: 2px solid rgba(177, 140, 93, 0.3);
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.fantasy-label {
+    display: block;
+    color: #b18c5d;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.fantasy-input {
+    width: 100%;
+    background: rgba(10, 8, 7, 0.8);
+    border: 1px solid #3d2b1f;
+    padding: 12px 15px;
+    color: #f3e5ab;
+    transition: all 0.3s;
+    border-radius: 0;
+}
+
+.fantasy-input:focus {
+    outline: none;
+    border-color: #ffd27f;
+    box-shadow: 0 0 15px rgba(255, 210, 127, 0.1);
+    background: rgba(30, 20, 15, 0.9);
+}
+
+.btn-link-fantasy {
+    background: transparent;
+    border: none;
+    color: #8b7355;
+    text-decoration: underline;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-link-fantasy:hover {
+    color: #ffd27f;
+}
+
+/* --- ORDER HISTORY REDESIGN (CARD STYLE) --- */
+
+.orders-list-fantasy {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.order-item-card {
+    background: rgba(30, 20, 15, 0.7);
+    border: 1px solid #3d2b1f;
+    border-radius: 12px;
+    padding: 20px;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.order-item-card:hover {
+    border-color: #ffd27f;
+    background: rgba(45, 34, 25, 0.9);
+    transform: translateX(5px);
+}
+
+.order-header-v2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(177, 140, 93, 0.2);
+    padding-bottom: 12px;
+    margin-bottom: 15px;
+}
+
+.order-id {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #b18c5d;
+}
+
+.badge-status-v2 {
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.status-done {
+    background: rgba(0, 255, 136, 0.1);
+    color: #00ff88;
+    border: 1px solid #00ff88;
+}
+
+.status-pending {
+    background: rgba(255, 165, 0, 0.1);
+    color: #ffa500;
+    border: 1px solid #ffa500;
+}
+
+.order-body-v2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.item-line {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 5px;
+}
+
+.item-name {
+    color: #f3e5ab;
+    font-weight: 500;
+}
+
+.item-qty {
+    color: #8b7355;
+}
+
+.order-meta {
+    text-align: right;
+}
+
+.order-date {
+    font-size: 0.85rem;
+    color: #8b7355;
+    margin-bottom: 5px;
+}
+
+.order-total-v2 {
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.order-footer-v2 {
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-view-detail {
+    background: transparent;
+    border: 1px solid #b18c5d;
+    color: #b18c5d;
+    padding: 5px 15px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.btn-view-detail:hover {
+    background: #b18c5d;
+    color: #1a0f0a;
+}
+
+/* --- ORDER DETAIL MODAL --- */
+
+.order-detail-modal {
+    width: 95%;
+    max-width: 500px;
+    background: rgba(20, 15, 10, 0.98);
+    animation: modalSlideUp 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+@keyframes modalSlideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.divider-gold {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #b18c5d, transparent);
+    margin: 15px 0;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.section-subtitle {
+    color: #b18c5d;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.detail-item-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-name {
+    color: #f3e5ab;
+    font-weight: bold;
+}
+
+.item-sub {
+    font-size: 0.75rem;
+    color: #8b7355;
+}
+
+.detail-total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.total-gold-large {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ffd27f;
+    text-shadow: 0 0 10px rgba(255, 210, 127, 0.3);
+}
+
+/* Thanh cuộn cho modal nếu quá dài */
+.scroll-fantasy {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.scroll-fantasy::-webkit-scrollbar {
+    width: 4px;
+}
+
+.scroll-fantasy::-webkit-scrollbar-thumb {
+    background: #b18c5d;
+    border-radius: 10px;
+}
+
+/* Nút đóng modal */
+.close-btn {
+    background: transparent;
+    border: none;
+    color: #b18c5d;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    color: #ff4444;
+    transform: rotate(90deg);
+}
+
+/* 6. POINTS & TREASURE - KHO BÁU
+   -------------------------------------------------------------------------- */
+.points-container-premium {
+    padding: 20px;
+}
+
+.gem-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 15px #00d4ff);
+}
+
+.point-val {
+    font-size: 4.5rem;
+    font-family: 'Cinzel', serif;
+    color: #ffd27f;
+    line-height: 1;
+    display: block;
+    text-shadow: 0 0 20px rgba(255, 210, 127, 0.5);
+}
+
+.point-unit {
+    letter-spacing: 8px;
+    color: #b18c5d;
+    font-weight: 900;
+}
+
+.reward-card {
+    background: #1a1412;
+    border: 1px dashed #3d2b1f;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.reward-card:hover {
+    border-color: #ffd27f;
+    transform: translateY(-5px);
+}
+
+/* 7. MODAL - CỬA SỔ HIỆN LÊN
+   -------------------------------------------------------------------------- */
+.fantasy-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.fantasy-modal-content {
+    width: 90%;
+    max-width: 500px;
+    animation: modalSlideUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes modalSlideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    color: #8b0000;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* 8. COMMON ELEMENTS
+   -------------------------------------------------------------------------- */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn-logout-fantasy {
+    width: 100%;
+    background: transparent;
+    border: 1px solid #8b0000;
+    color: #8b0000;
+    padding: 12px;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 30px;
+    transition: 0.3s;
+}
+
+.btn-logout-fantasy:hover {
+    background: #8b0000;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(139, 0, 0, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .profile-sidebar-fantasy {
+        margin-bottom: 30px;
+    }
+
+    .nav-menu-fantasy {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .nav-item-btn {
+        flex: 1;
+        min-width: 150px;
+        font-size: 0.8rem;
+    }
+}
+
+
+.badge-default-fantasy {
+    background: rgba(0, 255, 136, 0.1);
+    color: #00ff88;
+    border: 1px solid #00ff88;
+    padding: 2px 10px;
+    font-size: 0.65rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.method-item-card {
+    background: rgba(45, 34, 25, 0.4);
+    border: 1px solid #3d2b1f;
+    padding: 20px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+    border-radius: 4px;
+}
+
+.method-item-card.default {
+    border-color: #ffd27f;
+    box-shadow: inset 4px 0 0 #ffd27f;
+    /* Vạch vàng bên trái cho thẻ mặc định */
+}
+
+.payment-icon {
+    font-size: 1.5rem;
+    background: #1a0f0a;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid #b18c5d;
+}
+
+
+.btn-fantasy-outline {
+    background: transparent;
+    border: 1px dashed #ffd27f;
+    /* Đường viền đứt đoạn cho chất Fantasy */
+    color: #ffd27f;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.btn-fantasy-outline:hover {
+    background: rgba(255, 210, 127, 0.1);
+    border-style: solid;
+    box-shadow: 0 0 10px rgba(255, 210, 127, 0.2);
+}
+
+
+/* --- HORIZONTAL FAVORITE CARD (RPG STYLE) --- */
+
+.favorites-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.fav-horizontal-card {
+    display: flex;
+    background: rgba(30, 20, 15, 0.7);
+    border: 1px solid #3d2b1f;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 120px;
+    /* Cố định chiều cao theo hình */
+    transition: 0.3s ease;
+}
+
+.fav-horizontal-card:hover {
+    border-color: #ffd27f;
+    background: rgba(45, 30, 20, 0.9);
+    transform: translateX(10px);
+    /* Hiệu ứng trượt nhẹ sang phải khi hover */
+}
+
+/* Section Trái: Ảnh */
+.fav-left-section {
+    position: relative;
+    width: 140px;
+    height: 100%;
+}
+
+.fav-img-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+}
+
+.fav-tags-stack {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.tag-mini {
+    font-size: 0.6rem;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    /* Chỉ có Tag là bay lơ lửng như bạn yêu cầu */
+    animation: tagFloat 3s ease-in-out infinite;
+}
+
+@keyframes tagFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+.tag-best {
+    background: #1a472a;
+    border: 1px solid #2d7a43;
+}
+
+.tag-hot {
+    background: #8b0000;
+    border: 1px solid #ff4444;
+}
+
+.tag-sale {
+    background: #d4af37;
+    color: #000;
+    font-weight: 900;
+}
+
+/* Section Phải: Thông tin */
+.fav-right-section {
+    flex: 1;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.fav-info-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.fav-name-title {
+    font-size: 1.1rem;
+    color: #f3e5ab;
+    margin: 0;
+    font-weight: 700;
+}
+
+.fav-pricing {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.price-current {
+    font-size: 1.2rem;
+    color: #ffd27f;
+    font-weight: 800;
+}
+
+.price-original {
+    font-size: 0.8rem;
+    color: #666;
+    text-decoration: line-through;
+}
+
+/* Nút bấm */
+.fav-info-bottom {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.btn-craft-gold {
+    background: linear-gradient(90deg, #b18c5d, #ffd27f);
+    border: none;
+    border-radius: 8px;
+    padding: 6px 20px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #1a0f0a;
+    transition: 0.3s;
+}
+
+.btn-craft-gold:hover {
+    filter: brightness(1.2);
+    box-shadow: 0 0 15px rgba(255, 210, 127, 0.4);
+}
+
+.btn-remove-rpg {
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 68, 68, 0.1);
+    border: 1px solid rgba(255, 68, 68, 0.3);
+    color: #ff4444;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.btn-remove-rpg:hover {
+    background: #ff4444;
+    color: #fff;
+}

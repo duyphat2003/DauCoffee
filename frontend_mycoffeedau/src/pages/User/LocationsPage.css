@@ -1,0 +1,146 @@
+.locations-container {
+    padding: 120px 0;
+    background: radial-gradient(circle at top, #1a0f0a 0%, #050404 100%);
+    min-height: 100vh;
+}
+
+.branch-card {
+    background: linear-gradient(145deg, rgba(26, 15, 10, 0.9), rgba(15, 10, 5, 0.95)) !important;
+    border: 1px solid #3d2b1f;
+    border-radius: 4px;
+    /* Giữ nét vuông vức Fantasy nhưng bo nhẹ */
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.branch-card:hover {
+    border-color: #ffd27f;
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(177, 140, 93, 0.15);
+}
+
+.branch-image-wrapper {
+    position: relative;
+    height: 100%;
+    min-height: 300px;
+    overflow: hidden;
+    border-right: 1px solid rgba(177, 140, 93, 0.2);
+}
+
+/* Lớp phủ màu cho ảnh để tiệp với nền đen */
+.branch-image-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(5, 4, 4, 0.2));
+}
+
+.branch-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(20%) brightness(80%);
+    transition: 1.2s ease;
+}
+
+.branch-card:hover .branch-img {
+    transform: scale(1.1);
+    filter: sepia(0%) brightness(100%);
+}
+
+/* Content Styling */
+.branch-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
+
+.branch-content h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.branch-info-list p {
+    color: #a09080;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.branch-info-list strong {
+    color: #ffd27f;
+    font-family: 'Cinzel', serif;
+    min-width: 100px;
+    font-weight: 500;
+}
+
+/* Nút Chỉ đường (Filled) */
+.btn-fantasy {
+    padding: 10px 25px;
+    background: linear-gradient(135deg, #b18c5d 0%, #6d4c2a 100%);
+    border: none;
+    color: #fff;
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-fantasy:hover {
+    background: linear-gradient(135deg, #ffd27f 0%, #b18c5d 100%);
+    color: #000;
+    transform: scale(1.05);
+}
+
+/* Nút Đặt bàn (Outline) */
+.btn-outline-fantasy {
+    background: rgba(177, 140, 93, 0.05);
+    border: 1px solid #b18c5d;
+    color: #ffd27f;
+    padding: 10px 25px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.btn-outline-fantasy:hover {
+    background: #b18c5d;
+    color: #000;
+    border-color: #ffd27f;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .branch-image-wrapper {
+        min-height: 220px;
+        border-right: none;
+        border-bottom: 1px solid #3d2b1f;
+    }
+
+    .branch-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .branch-actions {
+        width: 100%;
+    }
+
+    .btn-fantasy,
+    .btn-outline-fantasy {
+        flex: 1;
+        /* Hai nút chia đều chiều rộng trên mobile */
+        justify-content: center;
+        padding: 12px 10px;
+    }
+}

@@ -1,0 +1,100 @@
+import type { Review } from "../models/review";
+
+export const reviews: Review[] = [
+  {
+    id: 1,
+    avatar: "https://i.pravatar.cc/100?img=1",
+    name: "Phát",
+    rating: 5,
+    comment: "Cà phê đậm vị, hậu ngọt rất đã!",
+    id_drink: "coffee-1",
+  },
+  {
+    id: 2,
+    avatar: "https://i.pravatar.cc/100?img=2",
+    name: "Minh",
+    rating: 4,
+    comment: "Trà trái cây khá fresh, hợp mùa hè.",
+    id_drink: "tea-2",
+  },
+  {
+    id: 3,
+    avatar: "https://i.pravatar.cc/100?img=3",
+    name: "Lan",
+    rating: 5,
+    comment: "Cold brew uống cực chill!",
+    id_drink: "coffee-5",
+  },
+  {
+    id: 4,
+    avatar: "https://i.pravatar.cc/100?img=4",
+    name: "Tuấn",
+    rating: 3,
+    comment: "Ổn nhưng hơi ngọt.",
+    id_drink: "tea-6",
+  },
+  {
+    id: 5,
+    avatar: "https://i.pravatar.cc/100?img=5",
+    name: "Hà",
+    rating: 5,
+    comment: "Sinh tố bơ siêu ngon!",
+    id_drink: "smoothie-3",
+  },
+  {
+    id: 6,
+    avatar: "https://i.pravatar.cc/100?img=6",
+    name: "Khoa",
+    rating: 4,
+    comment: "Matcha thơm nhưng hơi đắng.",
+    id_drink: "cocktail-8",
+  },
+  {
+    id: 7,
+    avatar: "https://i.pravatar.cc/100?img=7",
+    name: "Vy",
+    rating: 5,
+    comment: "Best seller đúng nghĩa!",
+    id_drink: "tea-7",
+  },
+  {
+    id: 8,
+    avatar: "https://i.pravatar.cc/100?img=8",
+    name: "Hùng",
+    rating: 4,
+    comment: "Uống ổn, giá hợp lý.",
+    id_drink: "tea-2",
+  },
+  {
+    id: 9,
+    avatar: "https://i.pravatar.cc/100?img=9",
+    name: "Trang",
+    rating: 5,
+    comment: "Rất đáng thử!",
+    id_drink: "tea-7",
+  },
+  {
+    id: 10,
+    avatar: "https://i.pravatar.cc/100?img=10",
+    name: "An",
+    rating: 4,
+    comment: "Ổn áp, sẽ quay lại.",
+    id_drink: "tea-7",
+  },
+  {
+    id: 11,
+    avatar: "https://i.pravatar.cc/150?u=1",
+    name: "Lữ khách bí ẩn",
+    rating: 5,
+    comment: "Hương vị tuyệt vời, như được tiếp thêm 50% Mana vậy!",
+    id_drink: "coffee-1"
+  },
+  {
+    id: 12,
+    avatar: "https://i.pravatar.cc/150?u=2",
+    name: "Pháp sư tối thượng",
+    rating: 4,
+    comment: "Khá ngon, nhưng ta mong đợi một chút hiệu ứng lấp lánh hơn.",
+    id_drink: "tea-7"
+  }
+];

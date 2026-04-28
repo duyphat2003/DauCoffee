@@ -1,0 +1,476 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Quicksand:wght@400;600&display=swap');
+
+.drink-list-page {
+  background-color: #0d0d0d;
+  min-height: 100vh;
+  font-family: 'Quicksand', sans-serif;
+  color: #f3e5ab;
+}
+
+.drink-list-page .list-toolbar {
+  background: linear-gradient(90deg, #1a1412, #120c09);
+  border: 1px solid rgba(177, 140, 93, 0.3);
+  border-radius: 12px;
+
+  padding: 10px 15px;
+
+  box-shadow: 0 0 10px rgba(177, 140, 93, 0.2);
+}
+
+.drink-list-page .label-gold {
+  color: #d4af37;
+  font-weight: bold;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+/* button */
+.drink-list-page .btn-grid-toggle {
+  background: #0c0c0c;
+  border: 1px solid #3d2b1f;
+  border-radius: 8px;
+
+  padding: 6px;
+  margin-right: 6px;
+
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+/* hover */
+.drink-list-page .btn-grid-toggle:hover {
+  border-color: #d4af37;
+  box-shadow: 0 0 6px rgba(212, 175, 55, 0.5);
+}
+
+/* active */
+.drink-list-page .btn-grid-toggle.active {
+  background: #d4af37;
+  border-color: #d4af37;
+}
+
+/* icon grid container */
+.drink-list-page .grid-icon {
+  display: grid;
+  gap: 2px;
+}
+
+/* grid layouts */
+.drink-list-page .grid-2 {
+  grid-template-columns: repeat(2, 6px);
+}
+
+.drink-list-page .grid-3 {
+  grid-template-columns: repeat(3, 6px);
+}
+
+.drink-list-page .grid-4 {
+  grid-template-columns: repeat(4, 6px);
+}
+
+/* dots */
+.drink-list-page .grid-icon span {
+  width: 6px;
+  height: 6px;
+  background: #b18c5d;
+  border-radius: 2px;
+}
+
+/* active icon color */
+.drink-list-page .btn-grid-toggle.active .grid-icon span {
+  background: #1a0f0a;
+}
+
+.drink-list-page .fantasy-select {
+  background: linear-gradient(180deg, #0c0c0c, #1a1412);
+  border: 1px solid #3d2b1f;
+
+  color: #f3e5ab;
+  padding: 10px 35px 10px 12px;
+
+  border-radius: 10px;
+  font-size: 0.9rem;
+
+  appearance: none;
+  cursor: pointer;
+
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23d4af37' height='20' viewBox='0 0 20 20' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M5 7l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+
+  transition: 0.25s;
+}
+
+/* hover */
+.drink-list-page .fantasy-select:hover {
+  border-color: #d4af37;
+}
+
+/* focus */
+.drink-list-page .fantasy-select:focus {
+  border-color: #d4af37;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+}
+
+/* Sidebar & Panel */
+.drink-list-page .fantasy-panel {
+  background: linear-gradient(180deg, #1f1511, #120c09);
+  border: 2px solid rgba(177, 140, 93, 0.5);
+  border-radius: 16px;
+
+  padding: 20px;
+
+  box-shadow:
+    0 0 15px rgba(177, 140, 93, 0.2),
+    inset 0 0 10px rgba(255, 255, 255, 0.03);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  transition: 0.3s;
+  margin-top: 70px;
+}
+
+.drink-list-page .fantasy-panel:hover {
+  box-shadow:
+    0 0 25px rgba(177, 140, 93, 0.5),
+    inset 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.drink-list-page .filter-title {
+  font-family: 'Cinzel', serif;
+  color: #f3e5ab;
+
+  text-align: center;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+
+  border-bottom: 1px solid rgba(177, 140, 93, 0.3);
+
+  text-shadow: 0 0 6px rgba(243, 229, 171, 0.3);
+}
+
+.drink-list-page .filter-section {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(177, 140, 93, 0.15);
+}
+
+.drink-list-page .filter-section:hover {
+  border-color: rgba(212, 175, 55, 0.5);
+  transform: scale(1.02);
+}
+
+.drink-list-page .section-label {
+  display: block;
+  margin-bottom: 8px;
+
+  font-size: 0.8rem;
+  color: #d4af37;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Dropdown & Inputs */
+.drink-list-page
+.drink-list-page .price-input-container input {
+  background: #0c0c0c;
+  border: 1px solid #3d2b1f;
+
+  color: #f3e5ab;
+  padding: 10px;
+  border-radius: 8px;
+
+  font-size: 0.9rem;
+  transition: 0.25s;
+}
+
+/* focus glow */
+.drink-list-page 
+.drink-list-page .price-input-container input:focus {
+  border-color: #d4af37;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+}
+
+
+.drink-list-page .price-input-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  
+}
+.drink-list-page .price-input-container input {
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+  /* 🔥 QUAN TRỌNG cho grid */
+}
+/* Custom Checkbox */
+.drink-list-page .custom-checkbox-list {
+  list-style: none;
+  padding: 0;
+}
+
+
+.drink-list-page .custom-checkbox-list input[type="checkbox"] {
+  display: none;
+}
+
+.drink-list-page .custom-checkbox-list li {
+  margin-bottom: 10px;
+}
+
+.drink-list-page .custom-checkbox-list label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #ddd;
+  transition: 0.2s;
+}
+
+/* hover text */
+.drink-list-page .custom-checkbox-list label:hover {
+  color: #f3e5ab;
+}
+
+/* box */
+.drink-list-page .custom-checkbox-list label span {
+  width: 18px;
+  height: 18px;
+
+  border: 2px solid #b18c5d;
+  border-radius: 4px;
+
+  margin-right: 10px;
+  position: relative;
+
+  transition: 0.25s;
+}
+
+/* checked */
+.drink-list-page .custom-checkbox-list input:checked+label span {
+  background: linear-gradient(135deg, #d4af37, #b18c5d);
+  box-shadow: 0 0 6px rgba(212, 175, 55, 0.6);
+}
+
+/* check icon */
+.drink-list-page .custom-checkbox-list input:checked+label span:after {
+  content: '✓';
+  position: absolute;
+  top: -2px;
+  left: 3px;
+  font-size: 0.8rem;
+  color: #1a0f0a;
+}
+
+/* Card UI */
+.drink-list-page .drink-card-mini {
+  background: linear-gradient(180deg, #2b1d17, #1a1412);
+  border: 2px solid #b18c5d;
+  border-radius: 20px;
+  overflow: hidden;
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(177, 140, 93, 0.2);
+}
+
+.drink-list-page .drink-card-mini:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(177, 140, 93, 0.6);
+}
+
+.drink-list-page .card-img-container {
+  aspect-ratio: 1/1;
+  position: relative;
+  overflow: hidden;
+}
+
+.drink-list-page .card-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+.drink-list-page .item-name {
+  background: #2a1710;
+  color: #f3e5ab;
+
+  margin: 10px;
+  padding: 10px;
+
+  border-radius: 10px;
+
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+
+  text-transform: uppercase;
+}
+
+.drink-list-page .price-container {
+  text-align: center;
+    margin-bottom: 10px;
+}
+
+.drink-list-page .price-old {
+  color: #aaa;
+  font-size: 0.8rem;
+  margin-right: 6px;
+}
+
+.drink-list-page .price-new {
+  color: #f3e5ab;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Container chứa tag */
+.drink-list-page .hanging-tags-left {
+  position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 2;
+}
+.drink-list-page .tag {
+  padding: 4px 10px;
+  font-size: 0.65rem;
+  font-weight: bold;
+  border-radius: 6px;
+}
+.drink-list-page .tag.gold {
+  background: #d4af37;
+  color: #000;
+}
+
+.drink-list-page .tag.blue {
+  background: #2c3e50;
+  color: #fff;
+}
+
+.drink-list-page .tag-sale {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff4d4f;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+/* Tag treo */
+.drink-list-page .tag-hanging {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Dây treo */
+.drink-list-page .rope {
+  width: 2px;
+  height: 10px;
+  background: #d7ccc8;
+  margin: 0 auto;
+}
+
+/* Nội dung tag */
+.drink-list-page .tag-content {
+  display: inline-block;
+  padding: 3px 8px;
+  font-size: 0.6rem;
+  font-weight: bold;
+  border: 1px solid #000;
+  border-radius: 3px;
+  text-align: center;
+  min-width: 40px;
+}
+
+
+/* Promotion */
+/* Giá cũ gạch ngang */
+.drink-list-page .price-old {
+  font-size: 0.75rem;
+  text-decoration: line-through;
+  color: #555;
+  margin-right: 8px;
+}
+
+.drink-list-page .btn-action-fantasy {
+  background: #b18c5d;
+  color: #1a0f0a;
+
+  border: none;
+  width: 85%;
+  margin: 10px auto 15px;
+
+  padding: 10px;
+  border-radius: 20px;
+
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+
+  transition: 0.2s;
+}
+
+.drink-list-page .btn-action-fantasy:hover {
+  background: #d4af37;
+  transform: scale(1.05);
+}
+/* Pagination */
+.drink-list-page .pagination-fantasy {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 8px;
+}
+
+.drink-list-page .pagination-fantasy li {
+  width: 35px;
+  height: 35px;
+  border: 1px solid #3d2b1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #b18c5d;
+  font-family: 'Cinzel', serif;
+}
+
+.drink-list-page .pagination-fantasy li.active {
+  background: #b18c5d;
+  color: #1a0f0a;
+}
+
+.drink-list-page .arrow-left,
+.drink-list-page .arrow-right {
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid #b18c5d;
+  border-left: 2px solid #b18c5d;
+}
+
+.drink-list-page .arrow-left {
+  transform: rotate(-45deg);
+}
+
+.drink-list-page .arrow-right {
+  transform: rotate(135deg);
+}

@@ -1,0 +1,134 @@
+.about-page {
+    background: radial-gradient(circle at center, #1a0f0a 0%, #050505 100%);
+    color: #e0c9a6;
+    font-family: 'Quicksand', sans-serif;
+    min-height: 100vh;
+}
+
+/* Tiêu đề kiểu biên niên sử */
+.chronicle-title {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    color: #ffd27f;
+    text-shadow: 0 0 20px rgba(255, 210, 127, 0.3);
+    letter-spacing: 5px;
+}
+
+.title-divider {
+    height: 2px;
+    width: 200px;
+    background: linear-gradient(90deg, transparent, #b18c5d, transparent);
+    margin: 20px auto;
+    position: relative;
+}
+
+.crystal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 10px;
+    height: 10px;
+    background: #ffd27f;
+    box-shadow: 0 0 10px #ffae00;
+}
+
+/* Khung ảnh huyền thoại */
+.legend-img-frame {
+    position: relative;
+    padding: 15px;
+    border: 1px solid #3d2b1f;
+    background: #0a0807;
+}
+
+.legend-img {
+    width: 100%;
+    filter: sepia(30%) contrast(1.1);
+    transition: 0.5s;
+}
+
+.legend-img-frame:hover .legend-img {
+    filter: sepia(0%) contrast(1.2);
+}
+
+.frame-decoration {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 3px solid #b18c5d;
+}
+
+.top-left {
+    top: -5px;
+    left: -5px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.bottom-right {
+    bottom: -5px;
+    right: -5px;
+    border-left: none;
+    border-top: none;
+}
+
+/* Nội dung cuộn giấy */
+.parchment-content {
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.section-subtitle {
+    font-family: 'Cinzel', serif;
+    color: #b18c5d;
+    margin-bottom: 20px;
+}
+
+.mission-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.mission-list li {
+    margin-bottom: 15px;
+}
+
+.mission-list span {
+    color: #ffd27f;
+    margin-right: 10px;
+}
+
+/* Chỉ số Stats */
+.stat-card {
+    background: rgba(177, 140, 93, 0.05);
+    border: 1px solid rgba(177, 140, 93, 0.2);
+    padding: 30px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    background: rgba(177, 140, 93, 0.1);
+    border-color: #ffd27f;
+    transform: translateY(-10px);
+}
+
+.stat-number {
+    font-family: 'Cinzel', serif;
+    color: #ffd27f;
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    color: #b18c5d;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+.master-alchemist {
+    font-family: 'Cinzel', serif;
+    color: #ffd27f;
+    font-size: 1.5rem;
+}

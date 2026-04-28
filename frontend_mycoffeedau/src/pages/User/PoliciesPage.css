@@ -1,0 +1,88 @@
+.policies-container {
+    padding: 120px 0;
+    background: #050404;
+    min-height: 100vh;
+}
+
+.policy-sidebar {
+    background: rgba(26, 15, 10, 0.8) !important;
+    position: sticky;
+    top: 100px;
+}
+
+.policy-nav-link {
+    width: 100%;
+    background: transparent;
+    border: 1px solid transparent;
+    color: #8b7355;
+    padding: 15px;
+    text-align: left;
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.policy-nav-link:hover {
+    color: #ffd27f;
+    background: rgba(177, 140, 93, 0.1);
+}
+
+.policy-nav-link.active {
+    border: 1px solid #b18c5d;
+    color: #ffd27f;
+    background: linear-gradient(90deg, rgba(177, 140, 93, 0.2), transparent);
+    box-shadow: -5px 0 0 #ffd27f;
+}
+
+.policy-icon {
+    font-size: 1.2rem;
+}
+
+/* --- Content Area --- */
+.policy-content-area {
+    background: rgba(20, 16, 12, 0.95) !important;
+    min-height: 500px;
+    position: relative;
+}
+
+.policy-content-area::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: url('https://www.transparenttextures.com/patterns/old-map.png');
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.policy-section h5 {
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.policy-section p {
+    line-height: 1.8;
+    font-size: 1rem;
+    padding-left: 25px;
+}
+
+.policy-footer-note {
+    border-top: 1px solid #3d2b1f;
+    padding-top: 20px;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: #5d4a37;
+}
+
+@media (max-width: 992px) {
+    .policy-sidebar {
+        position: relative;
+        top: 0;
+    }
+}

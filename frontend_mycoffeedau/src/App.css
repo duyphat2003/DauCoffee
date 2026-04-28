@@ -1,0 +1,148 @@
+/* Container tổng */
+.app-master-wrapper {
+ position: relative;
+z-index: 10;
+  width: 100% !important;
+  /* Ép nó rộng 100% */
+  max-width: none !important;
+  /* Bỏ giới hạn 1250px */
+  margin: 0;
+  min-height: 100vh;
+  background-color: #020508; /* Tối hơn nữa để nước sâu hơn */
+  overflow-x: hidden;
+  justify-content: center;
+}
+
+/* 2 bên sườn: Water Fantasy Aura - High Contrast */
+.side-decoration {
+position: fixed;
+  top: 0;
+  width: 25vw; /* Điều chỉnh để không lấn vào giữa quá nhiều */
+  height: 100%;
+  z-index: 1; /* Nằm dưới nội dung chính */
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Lớp 1: Luồng nước ma thuật (Magic Swirls) */
+.side-decoration::after {
+content: "";
+  position: absolute;
+  inset: -50%;
+  background: 
+    radial-gradient(circle at 50% 50%, rgba(0, 255, 234, 0.3) 0%, transparent 60%),
+    radial-gradient(circle at 20% 80%, rgba(0, 110, 255, 0.2) 0%, transparent 50%);
+  filter: blur(50px) contrast(1.2);
+  animation: magic-swirl 12s infinite alternate ease-in-out;
+}
+
+/* Lớp 2: Hiệu ứng vệt sáng loang loáng dưới nước (Caustics) */
+.side-decoration::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png'); 
+  opacity: 0.15;
+  mix-blend-mode: color-dodge; /* Làm các vệt sáng rực lên */
+  z-index: 2;
+  animation: caustic-shift 8s infinite alternate ease-in-out;
+}
+
+/* Trang trí viền sườn (Nhìn như pha lê/nước đóng băng) */
+.side-decoration.left {
+  left: 0;
+  background: linear-gradient(90deg, 
+    rgba(0, 30, 60, 0.95) 0%, 
+    rgba(5, 10, 20, 0.6) 80%, 
+    transparent 100%);
+  border-right: 3px solid rgba(0, 255, 234, 0.5);
+  box-shadow: 10px 0 40px rgba(0, 212, 255, 0.3);
+  /* Tạo hiệu ứng mờ dần về phía giữa để không đè nội dung */
+    -webkit-mask-image: linear-gradient(to right, black 60%, transparent 100%);
+
+  mask-image: linear-gradient(to right, black 60%, transparent 100%);
+}
+
+.side-decoration.right {
+  right: 0;
+  background: linear-gradient(-90deg, 
+    rgba(0, 30, 60, 0.95) 0%, 
+    rgba(5, 10, 20, 0.6) 80%, 
+    transparent 100%);
+  border-left: 3px solid rgba(0, 255, 234, 0.5);
+  box-shadow: -10px 0 40px rgba(0, 212, 255, 0.3);
+    -webkit-mask-image: linear-gradient(to left, black 60%, transparent 100%);
+  mask-image: linear-gradient(to left, black 60%, transparent 100%);
+
+}
+
+.side-decoration.left::before,
+.side-decoration.right::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(0, 255, 234, 0.2),
+        transparent
+    );
+    z-index: 4;
+    animation: light-sweep 6s infinite ease-in-out;
+}
+
+/* Hạt bọt khí ma thuật (Rõ và ngầu hơn) */
+.water-sparkles {
+position: absolute;
+  inset: 0;
+background-image: radial-gradient(circle, #fff 1px, transparent 1px);
+background-size: 60px 60px;
+  opacity: 0.2;
+  z-index: 3;
+filter: drop-shadow(0 0 5px rgba(0, 255, 234, 0.8));
+  /* --- ĐOẠN FIX LỖI TẠI ĐÂY --- */
+  -webkit-mask-image: linear-gradient(to right, black, transparent);
+  mask-image: linear-gradient(to right, black, transparent); /* Thêm dòng này để hỗ trợ Firefox */
+  
+  animation: bubbles-up 8s infinite linear;
+}
+
+/* Các Animation tạo độ "Ngầu" */
+@keyframes magic-swirl {
+  0% { transform: rotate(0deg) scale(1.5); }
+  100% { transform: rotate(360deg) scale(1.5); }
+}
+
+@keyframes bubbles-up {
+  from { background-position: 0 1000px, 0 500px; }
+  to { background-position: 0 0, 0 0; }
+}
+
+@keyframes caustic-shift {
+  from { transform: translateX(-5%) scale(1.2); }
+  to { transform: translateX(5%) scale(1.4); }
+}
+@keyframes light-sweep {
+    0% { top: -100%; }
+    100% { top: 100%; }
+}
+/* Nội dung chính: Tách biệt bằng Glow Xanh */
+.main-layout-wrapper {
+  position: relative;
+z-index: 10; /* Đảm bảo luôn nằm TRÊN nước */
+max-width: 1250px; /* Bóp gọn lại một chút để lộ rõ 2 bên sườn nước */
+  margin: 0 auto;
+/* Texture da cổ đặc trưng của Đậu Coffee */
+  background-color: #1a0f0a;
+  background-image: url('https://www.transparenttextures.com/patterns/dark-leather.png');
+    border-image: linear-gradient(to bottom, #b18c5d, rgba(0, 255, 234, 0.5), #b18c5d) 1;
+/* Hiệu ứng quan trọng: Đổ bóng cực mạnh để tạo độ cao */
+  box-shadow: 
+    0 0 50px rgba(0, 0, 0, 0.9), 
+    0 0 20px rgba(0, 255, 234, 0.1); /* Một chút ánh xanh hắt lên mép đường */
+/* Viền vàng đồng để định hình "con đường" */
+  border-left: 2px solid #b18c5d;
+  border-right: 2px solid #b18c5d;
+}
