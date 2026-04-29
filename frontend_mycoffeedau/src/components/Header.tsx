@@ -87,12 +87,16 @@ export default function Header() {
             </div>
 
             {/* User Badge */}
-            {IS_LOGIN ? (
+            {IS_LOGIN && IS_ADMIN ? (
+              <Button variant="outline-warning" className="rounded-pill btn-sm px-3" onClick={() => navigate("/admin")}>
+                ADMIN
+              </Button>
+            ) : IS_LOGIN ? (
               <div className="user-badge" onClick={() => navigate("/profile")}>
-                <img 
-                  src={user?.avatar || `https://i.pravatar.cc/100?u=${user?.email}`} 
-                  className="user-avatar" 
-                  alt="avatar" 
+                <img
+                  src={user?.avatar || `https://i.pravatar.cc/100?u=${user?.email}`}
+                  className="user-avatar"
+                  alt="avatar"
                 />
                 <div className="user-info-text d-none d-md-block">
                   <span className="user-name">{user?.nameDisplay}</span>
@@ -100,8 +104,8 @@ export default function Header() {
                 </div>
               </div>
             ) : (
-              <Button variant="outline-warning" className="rounded-pill btn-sm px-3" onClick={() => navigate(IS_ADMIN ? "/admin" : "/auth")}>
-                  { IS_ADMIN ? "ADMIN" : "ĐĂNG NHẬP"} 
+              <Button variant="outline-warning" className="rounded-pill btn-sm px-3" onClick={() => navigate("/auth")}>
+                ĐĂNG NHẬP
               </Button>
             )}
 

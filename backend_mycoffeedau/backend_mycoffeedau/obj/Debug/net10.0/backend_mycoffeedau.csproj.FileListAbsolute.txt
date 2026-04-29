@@ -157,3 +157,4 @@ D:\My Projects\My-Coffee-Dau\backend_mycoffeedau\backend_mycoffeedau\obj\Debug\n
 D:\My Projects\My-Coffee-Dau\backend_mycoffeedau\backend_mycoffeedau\obj\Debug\net10.0\backend_mycoffeedau.pdb
 D:\My Projects\My-Coffee-Dau\backend_mycoffeedau\backend_mycoffeedau\obj\Debug\net10.0\backend_mycoffeedau.genruntimeconfig.cache
 D:\My Projects\My-Coffee-Dau\backend_mycoffeedau\backend_mycoffeedau\obj\Debug\net10.0\ref\backend_mycoffeedau.dll
+D:\My Projects\My-Coffee-Dau\backend_mycoffeedau\backend_mycoffeedau\obj\Debug\net10.0\backend_mycoffeedau.sourcelink.json

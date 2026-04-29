@@ -1653,3 +1653,56 @@
     letter-spacing: 2px;
     user-select: none;
 }
+/* ── ĐĂNG XUẤT ─────────────────────────────────────────── */
+.sidebar-footer {
+  padding: 12px 10px 4px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  margin-top: auto;
+}
+
+.nav-btn--logout {
+  width: 100%;
+  color: #f87171 !important;
+  background: rgba(248, 113, 113, 0.06) !important;
+  border: 1px solid rgba(248, 113, 113, 0.15) !important;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.nav-btn--logout:hover {
+  background: rgba(248, 113, 113, 0.15) !important;
+  border-color: rgba(248, 113, 113, 0.4) !important;
+  color: #fca5a5 !important;
+}
+
+/* Nút đăng xuất trên topbar */
+.topbar-logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(248, 113, 113, 0.08);
+  border: 1px solid rgba(248, 113, 113, 0.25);
+  border-radius: 8px;
+  color: #f87171;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.topbar-logout-btn:hover {
+  background: rgba(248, 113, 113, 0.18);
+  border-color: rgba(248, 113, 113, 0.5);
+  color: #fca5a5;
+}
+
+.topbar-logout-label {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .topbar-logout-label {
+    display: inline;
+  }
+}

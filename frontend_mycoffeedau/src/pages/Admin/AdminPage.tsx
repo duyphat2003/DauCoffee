@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useMemo, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import './AdminPage.css';
 import type { Activity } from "../../models/activity";
 import type { Branch } from "../../models/branch";
@@ -1803,6 +1804,14 @@ function VouchersSection({ vouchers, setVouchers }: { vouchers: Voucher[]; setVo
 export default function AdminPage() {
   const [active,      setActive]      = useState<Section>("dashboard");
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    if (!window.confirm("Xác nhận đăng xuất khỏi trang quản trị?")) return;
+    localStorage.removeItem("user_token");
+    navigate("/auth");
+    window.location.reload();
+  };
 
   const [drinkList,    setDrinks]     = useState<Drink[]>([]);
   const [activityList, setActivities] = useState<Activity[]>([]);
@@ -1873,6 +1882,12 @@ export default function AdminPage() {
             </button>
           ))}
         </nav>
+        <div className="sidebar-footer">
+          <button className="nav-btn nav-btn--logout" onClick={handleLogout} title="Đăng xuất">
+            <span className="nav-btn__icon">⏻</span>
+            {sidebarOpen && <span className="nav-btn__label">Đăng xuất</span>}
+          </button>
+        </div>
         <button className="sidebar-toggle" onClick={() => setSidebarOpen(v => !v)}>
           {sidebarOpen ? "◀" : "▶"}
         </button>
@@ -1887,6 +1902,10 @@ export default function AdminPage() {
               {new Date().toLocaleDateString("vi-VN", { weekday: "long", year: "numeric", month: "long", day: "numeric" })}
             </span>
             <div className="topbar-avatar">👑</div>
+            <button className="topbar-logout-btn" onClick={handleLogout} title="Đăng xuất">
+              <span>⏻</span>
+              <span className="topbar-logout-label">Đăng xuất</span>
+            </button>
           </div>
         </div>
 
